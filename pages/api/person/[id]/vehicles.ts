@@ -1,10 +1,19 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import sqlite3 from "sqlite3";
+import { open } from "sqlite";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.statusCode = 200;
-  res.json({
-    message: "Get all vehicles for  a person with a person ID",
-    method: req.method,
-    id: req.query.id,
+
+  // open the database
+  const db = await open({
+    filename: "./mydb.sqlite",
+    driver: sqlite3.Database,
   });
+
+  const vehicles = await db.all("SELECT * FROM vehicle where ownerId = ?", [
+    req.query.id,
+  ]);
+
+  res.json(vehicles);
 };

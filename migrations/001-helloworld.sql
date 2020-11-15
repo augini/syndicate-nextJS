@@ -19,6 +19,9 @@ INSERT INTO Person (name, email) values ('farrukh', 'auginimike@mail.ru');
 INSERT INTO Vehicle (brand, model, ownerId) values('audi', 'R8', 1);
 INSERT INTO Vehicle (brand, model, ownerId) values('audi', 'R6', 1);
 INSERT INTO Vehicle (brand, model, ownerId) values('mercedes', 'benz', 2);
+INSERT INTO Vehicle (brand, model, ownerId) values('bugatti', 'veyron', 3);
+INSERT INTO Vehicle (brand, model, ownerId) values('bugatti', 'veyron', 3);
+INSERT INTO Vehicle (brand, model, ownerId) values('porsche', 'new version', 3);
 
 -- Down
 DROP TABLE Person;
