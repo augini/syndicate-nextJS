@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { User } from "../Details";
+import { User } from "../details";
 import { NextPageContext } from "next";
 
 export interface PersonProps {

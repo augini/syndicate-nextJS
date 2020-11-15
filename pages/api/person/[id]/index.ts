@@ -11,6 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     driver: sqlite3.Database,
   });
 
+  //Update the table if method is PUT
   if (req.method === "PUT") {
     const statement = await db.prepare(
       "UPDATE person SET name= ?, email = ? where id = ?"
